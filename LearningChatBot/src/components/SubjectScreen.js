@@ -10,6 +10,7 @@ import {
   ScrollView,
   Text,
   Linking,
+  Dimensions,
 } from 'react-native';
 import {Actions, ActionConst} from 'react-native-router-flux';
 import Wallpaper from './Wallpaper';
@@ -22,6 +23,7 @@ import {
 
 import ChatBot from 'react-native-chatbot';
 
+const DEVICE_WIDTH = Dimensions.get('window').width;
 const SIZE = 40;
 
 export default class SubjectScreen extends Component {
@@ -201,7 +203,7 @@ const steps = [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 20,
+    margin: 40,
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
   },
