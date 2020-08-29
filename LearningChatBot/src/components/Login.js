@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
 import {
   StyleSheet,
-  KeyboardAvoidingView,
   TouchableOpacity,
   Image,
   Dimensions,
   Animated,
   Easing,
-  Alert,
   Text,
-  ScrollView,
   View,
-  Keyboard,
 } from 'react-native';
 
 import {Actions, ActionConst} from 'react-native-router-flux';
@@ -45,30 +41,6 @@ export default class Login extends Component {
     this._onPress = this._onPress.bind(this);
     this.imageHeight = new Animated.Value(IMAGE_HEIGHT);
   }
-
-  componentWillMount () {
-    this.keyboardWillShowSub = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
-    this.keyboardWillHideSub = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide);
-  }
-
-  componentWillUnmount() {
-    this.keyboardWillShowSub.remove();
-    this.keyboardWillHideSub.remove();
-  }
-
-  keyboardWillShow = (event) => {
-    Animated.timing(this.imageHeight, {
-      duration: event.duration,
-      toValue: IMAGE_HEIGHT_SMALL,
-    }).start();
-  };
-
-  keyboardWillHide = (event) => {
-    Animated.timing(this.imageHeight, {
-      duration: event.duration,
-      toValue: IMAGE_HEIGHT,
-    }).start();
-  };
   
   _onPress() {
     if (this.state.isLoading) return;

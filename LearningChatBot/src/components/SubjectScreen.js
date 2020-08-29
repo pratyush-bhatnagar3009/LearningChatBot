@@ -66,13 +66,16 @@ export default class SubjectScreen extends Component {
       <>
         <View style={styles.container}>
           <ChatBot steps={steps} />
+          </View>
+          <View style={styles.wrapper}>
+          <View style={styles.inputWrap}>
           <TouchableOpacity
             onPress={this._onPress}
             style={styles.button}
             activeOpacity={1}>
             <Image style={styles.image} source={arrowImg} />
         </TouchableOpacity>
-        <Animated.View style={[styles.circle, {transform: [{scale: changeScale}]}]}/>
+        </View>
         </View>
       </>
     );
@@ -203,13 +206,15 @@ const steps = [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 40,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end',
   },
-  btncontainer: {
-    flex: 1,
-    margin: 20,
+  wrapper: {
+    paddingHorizontal: 10,
+  },
+  inputWrap: {
+    flexDirection: "row",
+    marginVertical: 10,
+    height: 45,
+    backgroundColor: "transparent",
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
   },

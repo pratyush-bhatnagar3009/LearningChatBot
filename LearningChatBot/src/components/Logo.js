@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
+    marginTop: 20,
     width: 80,
     height: 80,
   },

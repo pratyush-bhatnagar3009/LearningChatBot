@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {
   StyleSheet,
-  KeyboardAvoidingView,
   View,
-  ActivityIndicator,
   TouchableOpacity,
   Image,
   Dimensions,
